@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{E666A654-5A55-697E-67EF-252DAE732DF3}") = "AirWar", "Assembly-CSharp.csproj", "{CC2EF648-8106-E1B3-CF8A-C239EFC3C2B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC2EF648-8106-E1B3-CF8A-C239EFC3C2B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC2EF648-8106-E1B3-CF8A-C239EFC3C2B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC2EF648-8106-E1B3-CF8A-C239EFC3C2B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC2EF648-8106-E1B3-CF8A-C239EFC3C2B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

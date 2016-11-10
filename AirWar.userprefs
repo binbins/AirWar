@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scrips/DestorySelf.cs">
+    <Files>
+      <File FileName="Assets/Scrips/Player.cs" Line="31" Column="29" />
+      <File FileName="Assets/Scrips/Bolt.cs" Line="21" Column="1" />
+      <File FileName="Assets/Scrips/DestoryByBoundry.cs" Line="9" Column="4" />
+      <File FileName="Assets/Scrips/randomjRotation.cs" Line="9" Column="80" />
+      <File FileName="Assets/Scrips/DestorySelf.cs" Line="18" Column="23" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

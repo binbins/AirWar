@@ -45,12 +45,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\RockDestory.cs" />
+     <Compile Include="Assets\AttackPlayer.cs" />
      <Compile Include="Assets\Scrips\Bolt.cs" />
      <Compile Include="Assets\Scrips\DestoryByBoundry.cs" />
-     <Compile Include="Assets\Scrips\DestorySelf.cs" />
+     <Compile Include="Assets\Scrips\GameController.cs" />
      <Compile Include="Assets\Scrips\Player.cs" />
      <Compile Include="Assets\Scrips\RandomRotation.cs" />
+     <Compile Include="Assets\Scrips\RockDestory.cs" />
+     <Compile Include="Assets\Scrips\weaponController.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>

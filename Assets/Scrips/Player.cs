@@ -1,20 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[System.Serializable]
+public class Boundary	//这个是边界
+{
+	public float max_X = 4;
+	public float min_X = -4;
+	public float max_Z = 4;
+	public float min_Z = -4;
+}
+
 public class Player : MonoBehaviour {
 
 	public float speed;
 	public GameObject shot;
 	public Transform shotSpawn;
 
-	[System.Serializable]
-	public class Boundary	//这个是边界
-	{
-		 public float max_X = 4;
-		 public float min_X = -4;
-		 public float max_Z = 4;
-		 public float min_Z = -4;
-	}
 	public Boundary boundary;
 
 
@@ -44,4 +45,16 @@ public class Player : MonoBehaviour {
 		GetComponent<Rigidbody> ().velocity = movement * speed;
 		transform.position = new Vector3 (Mathf.Clamp(transform.position.x, boundary.min_X, boundary.max_X), 0, Mathf.Clamp(transform.position.z, boundary.min_Z, boundary.max_Z));
 	}
+
+	void OnTriggerEnter(Collider other){
+		if (other.tag == "Background" || other.tag == "Boundry") {
+			return;
+
+		}
+			
+		GameController gc = GameObject.Find ("GameController").transform.GetComponent<GameController>();
+		gc.GameOver ();
+	}
+
+
 }

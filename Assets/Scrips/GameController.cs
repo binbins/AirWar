@@ -1,23 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
-
-
+	public Text scoreText, gameOverText, restartText;
 	public GameObject[] rocks;
+	public GameObject enemy;
 	public Vector3 RockbitrthPos;
 	public float groupWait, buildInterval;
 	public int groupMaxCount ;
+	bool isGameOver;
+
+	private int curScore;
 	// Use this for initialization
 	void Start () {
 		StartCoroutine (BuildRock());
+
+		gameOverText.text = "";
+		restartText.text = "";
+		curScore = 0;
+		UpdateScore ();
+		isGameOver = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-
+		UpdateScore ();
+		if (isGameOver) {
+			if (Input.GetKeyDown (KeyCode.R)) {
+				GameRestart ();
+			}
+		}
 	}
 
 	IEnumerator BuildRock(){
@@ -31,8 +46,32 @@ public class GameController : MonoBehaviour {
 				Instantiate (rock, curPos, Quaternion.identity);
 				yield return new WaitForSeconds (buildInterval);
 			}
+			Vector3 enemyPos = new Vector3 (Random.Range(-RockbitrthPos.x, RockbitrthPos.x), RockbitrthPos.y, RockbitrthPos.z);
+			Instantiate (enemy, enemyPos, Quaternion.Euler(new Vector3(0, 180, 0)));
 			yield return new WaitForSeconds (groupWait);	//have a rest when finish building a group of rocks everytime
+
+			if (isGameOver) {
+				break;
+			}
 		}
+
+	}
+
+	public void UpdateScore() {
+		scoreText.text = "Score:" + curScore;
+	}
+
+	public void AddScore(int score) {
+		curScore += score;
+	}
+
+	public void GameOver() {
+		isGameOver = true;
+		gameOverText.text = "Game Over";
+		restartText.text = "Click 'R' To Restart";
+	}
+	public void GameRestart() {
+		Application.LoadLevel (Application.loadedLevel);
 
 	}
 }

@@ -25,6 +25,7 @@ public class RockDestory : MonoBehaviour {
 		} else {
 			Debug.Log ("does not find scripts");
 		}
+//		GetComponent<AudioSource> ().Play ();
 		GameObject rockexplo = (GameObject)Instantiate (selfBoom, transform.position, transform.rotation);
 		Destroy (rockexplo, 1);
 		Destroy (other.gameObject);

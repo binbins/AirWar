@@ -24,13 +24,15 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey("space") && Time.time > nextFire) {	//
-
+		GameController gc = GameObject.Find("GameController").GetComponent<GameController>();
+		if (Input.GetKey("space") && Time.time > nextFire && gc.bulletNum > 0) {	
+			
+			gc.AddBullet (-1);
 			nextFire = Time.time + fireRate;
 			Instantiate (shot, shotSpawn.position, shotSpawn.rotation);
 			GetComponent<AudioSource> ().Play();
@@ -41,7 +43,6 @@ public class Player : MonoBehaviour {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 		Vector3 movement = new Vector3 (moveHorizontal, 0f, moveVertical);
-
 		GetComponent<Rigidbody> ().velocity = movement * speed;
 		transform.position = new Vector3 (Mathf.Clamp(transform.position.x, boundary.min_X, boundary.max_X), 0, Mathf.Clamp(transform.position.z, boundary.min_Z, boundary.max_Z));
 	}

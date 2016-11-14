@@ -27,6 +27,7 @@ public class weaponController : MonoBehaviour {
 			Destroy (this.gameObject);
 			Destroy (other.gameObject);
 			Debug.Log ("敌机被击中或是和主角发生碰撞");
+			GameObject.Find("GameController").GetComponent<GameController>().AddBullet(2);
 //			GetComponent<AudioSource> ().Play ();
 			GameController gc = GameObject.Find ("GameController").transform.GetComponent<GameController>();
 			if (gc != null) {

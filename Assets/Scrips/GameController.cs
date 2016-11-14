@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
-	public Text scoreText, gameOverText, restartText;
+	public Text scoreText, gameOverText, restartText, bulletText;
 	public GameObject[] rocks;
 	public GameObject enemy;
 	public Vector3 RockbitrthPos;
 	public float groupWait, buildInterval;
-	public int groupMaxCount ;
+	public int groupMaxCount, bulletNum;
 	bool isGameOver;
 
 	private int curScore;
@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour {
 		gameOverText.text = "";
 		restartText.text = "";
 		curScore = 0;
+		bulletNum = 10;
 		UpdateScore ();
 		isGameOver = false;
 	}
@@ -48,6 +49,7 @@ public class GameController : MonoBehaviour {
 			}
 			Vector3 enemyPos = new Vector3 (Random.Range(-RockbitrthPos.x, RockbitrthPos.x), RockbitrthPos.y, RockbitrthPos.z);
 			Instantiate (enemy, enemyPos, Quaternion.Euler(new Vector3(0, 180, 0)));
+			bulletNum++;
 			yield return new WaitForSeconds (groupWait);	//have a rest when finish building a group of rocks everytime
 
 			if (isGameOver) {
@@ -58,11 +60,16 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void UpdateScore() {
-		scoreText.text = "Score:" + curScore;
+		scoreText.text = "分数:" + curScore;
+		bulletText.text = "弹药:" + bulletNum;	
+
 	}
 
 	public void AddScore(int score) {
 		curScore += score;
+	}
+	public void AddBullet(int num) {
+		bulletNum += num;
 	}
 
 	public void GameOver() {

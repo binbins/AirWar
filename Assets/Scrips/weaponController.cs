@@ -26,6 +26,7 @@ public class weaponController : MonoBehaviour {
 			Instantiate (selfBoom, transform.position, transform.rotation);
 			Destroy (this.gameObject);
 			Destroy (other.gameObject);
+			GameObject.Find("GameController").GetComponent<GameController>().audios[1].Play();
 			Debug.Log ("敌机被击中或是和主角发生碰撞");
 			GameObject.Find("GameController").GetComponent<GameController>().AddBullet(2);
 //			GetComponent<AudioSource> ().Play ();

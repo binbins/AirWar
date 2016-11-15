@@ -1,13 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scrips/DestorySelf.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scrips/GameController.cs">
     <Files>
-      <File FileName="Assets/Scrips/Player.cs" Line="35" Column="40" />
+      <File FileName="Assets/Scrips/GameController.cs" Line="52" Column="16" />
+      <File FileName="Assets/Scrips/Player.cs" Line="45" Column="69" />
       <File FileName="Assets/Scrips/Bolt.cs" Line="13" Column="45" />
       <File FileName="Assets/Scrips/DestoryByBoundry.cs" Line="9" Column="4" />
-      <File FileName="Assets/Scrips/DestorySelf.cs" Line="18" Column="23" />
       <File FileName="Assets/Scrips/RandomRotation.cs" Line="7" Column="14" />
-      <File FileName="Assets/RockDestory.cs" Line="14" Column="20" />
+      <File FileName="Assets/Scrips/RockDestory.cs" Line="29" Column="3" />
+      <File FileName="Assets/Scrips/weaponController.cs" Line="29" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

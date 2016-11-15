@@ -6,13 +6,23 @@ public class GameController : MonoBehaviour {
 
 	public Text scoreText, gameOverText, restartText, bulletText;
 	public GameObject[] rocks;
+	public AudioSource[] audios;
 	public GameObject enemy;
 	public Vector3 RockbitrthPos;
 	public float groupWait, buildInterval;
 	public int groupMaxCount, bulletNum;
+	public Transform rockParent;
 	bool isGameOver;
 
 	private int curScore;
+
+//	private  GameController gc;
+//	public static GameController GetInstance(){
+//		if(gc == null){
+//			gc = new GameController();
+//		}
+//		return gc;
+//	}
 	// Use this for initialization
 	void Start () {
 		StartCoroutine (BuildRock());
@@ -44,7 +54,8 @@ public class GameController : MonoBehaviour {
 			for(int i = 0; i < groupMaxCount; i++) {
 				GameObject rock = rocks[Random.Range(0,rocks.Length)];
 				Vector3 curPos = new Vector3 (Random.Range(-RockbitrthPos.x, RockbitrthPos.x), RockbitrthPos.y, RockbitrthPos.z);
-				Instantiate (rock, curPos, Quaternion.identity);
+				GameObject arock = (GameObject)Instantiate (rock, curPos, Quaternion.identity);
+				arock.transform.SetParent (rockParent);
 				yield return new WaitForSeconds (buildInterval);
 			}
 			Vector3 enemyPos = new Vector3 (Random.Range(-RockbitrthPos.x, RockbitrthPos.x), RockbitrthPos.y, RockbitrthPos.z);

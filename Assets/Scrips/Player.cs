@@ -54,6 +54,7 @@ public class Player : MonoBehaviour {
 		}
 			
 		GameController gc = GameObject.Find ("GameController").transform.GetComponent<GameController>();
+		GameObject.Find("GameController").GetComponent<GameController>().audios[2].Play();
 		gc.GameOver ();
 	}
 
